@@ -13,11 +13,9 @@
 </head>
 <body>
     <header>
-        <nav class="header-tab" style="text-align: center; padding: 1%; height: 75px; float: left">
-            <img src="/static/images/logo-head.png" alt="" height="50" width="100"
-                style="border-radius: 5px; margin-top: -10px">
-            <a href="{% url 'main' %}" style="text-decoration: none"><b
-                    style="color: white; font-size: 24px; padding-top: 2%">A R COACHING CENTRE</b></a>
+        <nav class="container-fluid" style="text-align: center; background-color: rgb(65, 151, 150);">
+            <img src="/static/images/logo-head.png" alt="" height="50" width="100">
+            <a href="{% url 'main' %}" class="" style="color: white; text-decoration: none;"><b>A R COACHING CENTRE</b></a>
         </nav>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav2">
@@ -73,17 +71,15 @@
         </nav>
     </header>
     <main>
-    <div style="padding: 1%">
-        <div style="background-color: white; margin: auto; width: 65%; box-shadow: 1px 1px 10px grey">
-            <div style="width: 100%; height: 40px; padding: 8px">
-                {% for Announcement in announcements %}
+    <div class="container mt-3">
+      <div style="background-color: white; box-shadow: 1px 1px 10px grey">
+        {% for Announcement in announcements %}
                 <marquee direction="left">
                     <img src="/static/images/new.gif" height=15 width=30>
                     <a style="font-size: 14px; color: rgb(65, 151, 150)"><b>{{Announcement.announcement}}</b></a>
                 </marquee>
-                {% endfor %}
-            </div>
-        </div>
+        {% endfor %}
+      </div>
     </div>
 
     <div>
