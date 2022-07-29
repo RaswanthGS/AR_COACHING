@@ -14,7 +14,7 @@ def pgtrb(request):
         'posts' : Post.objects.filter(tag='PG TRB').order_by('date_posted'),
         'announcements' : Announcement.objects.all()
     }
-    return render(request, "blog/pgtrb.html", context)
+    return render(request, "blog/content.html", context)
     
 def polytrb(request):
     context={
