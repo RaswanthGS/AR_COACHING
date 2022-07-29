@@ -23,7 +23,6 @@ a{
 .carousel-item.active {
     display:block;
 }
-
 .right{
     margin-left: 5px;
     font-size: small;

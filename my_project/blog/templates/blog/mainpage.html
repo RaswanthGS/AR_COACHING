@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content%}
 <div class="carousel-bar">
-    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide carousel-fade mx-5" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           </ol>
@@ -32,10 +32,11 @@
     </div>
 </div>
 <div class="container">
-        {% for Post in posts %}
     <div class="row">
-        <div class="card col-md-8 col-sm-12 mb-3" style="box-shadow:10px 5px 12px rgba(0, 0, 0, 0.2);">
-            <div class="card-header pl-2 pr-2" style="background-color: rgb(65, 151, 150); color: white;">
+        <div class="col-md-8 col-sm-12">
+        {% for Post in posts %}
+        <div class="card mb-3" style="box-shadow:10px 5px 12px rgba(0, 0, 0, 0.2);">
+            <div class="card-header" style="background-color: rgb(65, 151, 150); color: white;">
                 <b style="font-size: 22px">{{Post.date_posted|date:"d"}}</b>
                 <c>{{Post.date_posted|date:"F, Y"}}</c>
                 <a href="http://{{Post.link}}" class="fa fa-download float-right mt-2 mr-1" style="color: white;"></a>
@@ -54,21 +55,22 @@
                 </div>
             </div>
         </div>
-    </div>
         {% endfor %}
-        <div class="row">
-            <div>
-                <div class="card col-md-4 col-sm-12 mb-2">
+    </div>
+    </div>
+    <div class="row">
+            <div class="col-md-4 col-sm-10">
+                <div class="card mb-2">
                     <div class="card-body ml-n1" style="background-color: rgb(65, 151, 150); color: white; font-size: medium; text-align: left; padding: 10px;">
-                        <p class="card-text">Announcements</p>
+                        <p class="card-header">Announcements</p>
                     </div>
                 </div>
                 {% for Announcement in announcements %}
-                <div class="card" style="width: 27%; margin-bottom: 15px; padding-left: 6px; box-shadow:10px 5px 12px rgba(0, 0, 0, 0.2);">
-                    <div class="card-body" style=" text-align: left; color: rgb(119, 119, 119);">
-                        <p style="margin-bottom: 0;">{{Announcement.announcement}}</p>
-                        <div class="post-sub" style="padding: 6px 24px">
-                            <p style="margin: 0; font-size: 10px;">{{Announcement.author}} - {{Announcement.time}}</p>
+                <div class="card" style="box-shadow:10px 5px 12px rgba(0, 0, 0, 0.2);">
+                    <div class="card-body" style="color: rgb(119, 119, 119);">
+                        <p class="mb-0">{{Announcement.announcement}}</p>
+                        <div class="post-sub pt-2 pb-2">
+                            <small>{{Announcement.author}} - {{Announcement.time}}</small>
                         </div>
                     </div>
                 </div>
