@@ -1,15 +1,10 @@
+@media (min-width: 768px) {
+    .card1{
+        border-right: 1px solid black;
+    }
+}
 body{
     background-color: rgb(245, 245, 245);
-}
-.header-tab {
-    text-align: center;
-    margin-left: -26px;
-    padding-right: 30px;
-    position:relative;
-    box-shadow: 2px 0px 0px 25px rgb(65, 151, 150);
-    background-color: rgb(65, 151, 150);
-    color: white;
-    width: 100%;
 }
 li{
     list-style: none;
@@ -28,19 +23,6 @@ a{
     font-size: small;
     padding-top: 1.5%;
     color: white;
-}
-.mainpage{
-    
-    margin-left: 10%;
-}
-.mainpage-left{
-    width: 61%;
-    border-right: 1px solid black;
-    margin-right: 1%;
-}
-.mainpage-right{
-    width: 150%;
-    padding-left: 63%;
 }
 .post-sub{
     border-top: 1px solid rgb(222, 222, 222);
