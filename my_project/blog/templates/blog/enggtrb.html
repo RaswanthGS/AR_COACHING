@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+{% block content%}
+<div>
+    <div class="content">
+        <div class="card" style="padding: 5% 5% 2% 5%" >
+            <h2 style="color: orange; text-align: center">ENGINEERING COLLEGE TRB EXAM - PHYSICS</h2>
+            <p style="text-align: center; color: blue">For the post of Assistant Professors in Government Enginreering Colleges</p>
+            <hr>
+            <label style="text-align: justify; color: blue">We care and concern to give you the best in every thing since we hold the responsibility for the most important step in your life. So what we bring to you here?</label>
+            <br>
+            <p style="color: darkblue"><i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Excellent Materials provided. <br>
+                <br>
+            <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Every unit consist of two half unit tests with 50 questions each, one problems test of 50 questions and one full unit test of 150.<br>
+            <br>
+            <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Regular test paper with answering and discussion sessions shall be held. <br>
+            <br>
+            <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Finally four half portion test and five full portion test will be conducted. <br>
+            <br>
+            <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Mathematical physics shall be handled by well versed mathematicians.<br>
+            <br>
+            <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Electronics units shall be handled by enthusiastic professors of great knowledge over electronics department.<br>
+            <br>
+            <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Class timings: 9.30am - 5.00pm on Saturdays, Sundays and Government holidays.
+            <br>
+            </p>
+        </div>
+    </div>
+    <div class="mainpage">
+        <div class="mainpage-left">
+            {% for Post in posts %}
+            <div class="card" style="width: 98%; margin-bottom: 15px; box-shadow:10px 5px 12px rgba(0, 0, 0, 0.2);">
+                <div style="background-color: rgb(65, 151, 150); width: 100%; padding: 8px 18px; color: white;">
+                    <b style="font-size: 18px">{{Post.date_posted|date:"d"}}</b>
+                    <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
+                    <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 6px"></a>
+                    {% if user.is_authenticated %}
+                        <a style="color: white; float: right; padding-top: 2px" href="#">Edit</a>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5 style="color: rgb(39, 39, 39)">{{Post.title}}</h5>
+                    {{Post.content|safe}}
+                    {% if user.is_autheticated %}
+                    <a href="">Edit</a>
+                    {% endif %}
+                    <div class="post-sub" style="padding: 6px 24px">
+                        <p style="margin: 0">Posted by {{Post.author}} - <b style="color: rgb(65, 151, 150)">{{Post.tag}}</b></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="mainpage-right1">
+            <img src="/static/images/logo.png" alt="" width="100%">
+        </div>
+    </div>
+</div>
+{% endblock content%}

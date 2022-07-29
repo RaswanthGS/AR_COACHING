@@ -1,0 +1,90 @@
+
+body{
+
+    background-color: rgb(245, 245, 245);
+}
+header{
+    font-family: 'Times New Roman', Times, serif;
+}
+.header-tab {
+    text-align: center;
+    margin-left: -26px;
+    padding-right: 30px;
+    position:relative;
+    box-shadow: 2px 0px 0px 25px rgb(65, 151, 150);
+    background-color: rgb(65, 151, 150);
+    color: white;
+    width: 100%;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.nav-link right {
+    margin-right: 50px;
+}
+.carousel-item.active {
+    display:block;
+}
+
+.right{
+    margin-left: 5px;
+    font-size: small;
+    padding-top: 1.5%;
+    color: white;
+}
+.mainpage{
+    
+    margin-left: 10%;
+}
+.mainpage-left{
+    width: 61%;
+    border-right: 1px solid black;
+    margin-right: 1%;
+}
+.mainpage-right{
+    width: 150%;
+    padding-left: 63%;
+}
+.post-sub{
+    border-top: 1px solid rgb(222, 222, 222);
+    margin-bottom: -20px;
+    margin-top: 2%;
+}
+.mainpage-right1{
+    width: 26%;
+    margin-left: 67%;
+    
+}
+footer{
+    margin:auto;
+    position: sticky;
+    margin-bottom: 0%;
+    margin-top: 20%;
+    background-color: rgb(65, 151, 150); 
+    width:100%; 
+    padding-top: 1%;
+}
+.content{
+    background-color: white;
+    border: 1px solid rgb(235, 235, 235);
+    margin: 10px;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.content-pgtrb{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+.carousel-bar{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}

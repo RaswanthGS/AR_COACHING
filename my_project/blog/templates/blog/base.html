@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ef78bd09eb.js" crossorigin="anonymous"></script>
+    
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" >
+    <title>A R Coaching Center</title>
+</head>
+<body>
+    <header>
+        <nav class="header-tab" style="text-align: center; padding: 1%; height: 75px; float: left">
+            <img src="/static/images/logo-head.png" alt="" height="50" width="100"
+                style="border-radius: 5px; margin-top: -10px">
+            <a href="{% url 'main' %}" style="text-decoration: none"><b
+                    style="color: white; font-size: 24px; padding-top: 2%">A R COACHING CENTRE</b></a>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav2">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu" style="margin-left: 5%;">
+              <ul class="navbar-nav mr-auto" style="margin-left: 5%;">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'pgtrb' %}">PG TRB <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'polytrb' %}">POLY TRB</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'enggtrb' %}">ENGG TRB</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'tnset' %}">TNSET</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'ugtrb' %}">UG TRB</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'sample' %}">SAMPLE MATERIALS</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'slogin' %}">TEST</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">CREATE POST</a>
+                </li>
+                {% endif %}
+                </ul>
+                <ul class="navbar-nav" style="margin-right: 10%; display: flex;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'main' %}">HOME</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}"><i style="margin-left: 10px; margin-top: 10px; color: black;" class="fa fa-solid fa fa-user"></i></a>
+                        {% else %}
+                            <a href="{% url 'login' %}"><i style="margin-left: 10px; margin-top: 10px; color: black;" class="fa fa-solid fa fa-user"></i></a>
+                        {% endif %}
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+    <main>
+    <div style="padding: 1%">
+        <div style="background-color: white; margin: auto; width: 65%; box-shadow: 1px 1px 10px grey">
+            <div style="width: 100%; height: 40px; padding: 8px">
+                {% for Announcement in announcements %}
+                <marquee direction="left">
+                    <img src="/static/images/new.gif" height=15 width=30>
+                    <a style="font-size: 14px; color: rgb(65, 151, 150)"><b>{{Announcement.announcement}}</b></a>
+                </marquee>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {% block content %}{% endblock content %}
+        <br>    
+    </div>
+</main>
+<section>
+  <footer class="text-white">
+    <div class="static-bottom" style="margin-top:2% ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 footer-about wow fadeInUp">
+            <h3><b>A R COACHING CENTRE</b></h3>
+            <p>
+              The interesting thing about coaching is that you have to trouble the comfortable, and comfort the troubled. 
+            </p>
+                </div>
+          <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+            <h3><b>CONTACT</b></h3>
+                <p><i class="fas fa-map-marker-alt"></i> A R COACHING CENTRE,Sakthi tuition center,Near Raja Theatre,Raja Nagar,Kallakurichi(Dt),Pin Code -606 202</p>
+                <p><i class="fas fa-phone"></i> Phone: +91 9361561415</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:arccphysics@domain.com" style="color: white;">arccphysics@gmail.com</a></p>
+                </div>
+                <div class="col-md-4 footer-links wow fadeInUp">
+                  <div class="row">
+                    <div class="col">
+                      <h3><B>QUICK LINKS</B></h3>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p><a class="scroll-link" href="#top-content" style="color: white;">HOME</a></p>
+                      <p><a href="#" style="color: white;">ENGGTRB</a></p>
+                      <p><a href="#" style="color: white;">PGTRB</a></p>
+                      <p><a href="#" style="color: white;">POLYTRB</a></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p><a href="#" style="color: white;">TNSET</a></p>
+                      <p><a href="#" style="color: white;">GATE</a></p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+</section>  
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>
