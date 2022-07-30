@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Announcement
+from .models import Content, Post, Announcement
 from .forms import PostForm, AnnouncementForm
 
 def main(request):
@@ -9,8 +9,9 @@ def main(request):
     }
     return render(request, "blog/mainpage.html", context)
 
-def pgtrb(request):
+def contentPage(request):
     context={
+        'contents':Content.objects.filter(nickname='PG TRB'),
         'posts' : Post.objects.filter(tag='PG TRB').order_by('date_posted'),
         'announcements' : Announcement.objects.all()
     }

@@ -1,10 +1,12 @@
 {% extends "blog/base.html" %}
 {% block content%}
 <div class="container my-5" style="background-color: white; border: 1px solid rgb(225, 225, 225);">
-    <h2 style="color: orange; text-align: center">ENGINEERING COLLEGE TRB EXAM - PHYSICS</h2>
-    <p style="text-align: center; color: blue">For the post of Assistant Professors in Government Enginreering Colleges</p>
+    {% for Content in contents %}
+    <div class="m-md-4 m-sm-3">
+    <h2 style="color: orange; text-align: center">{{ Content.title }}</h2>
+    <p style="text-align: center; color: blue">{{ Content.sub_title }}</p>
     <hr>
-    <label style="text-align: justify; color: blue">We care and concern to give you the best in every thing since we hold the responsibility for the most important step in your life. So what we bring to you here?</label>
+    <label style="text-align: justify; color: darkblue">{{ Content.subject }}</label>
     <br>
     <p style="color: darkblue"><i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Excellent Materials provided. <br>
     <br>
@@ -21,6 +23,8 @@
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Class timings: 9.30am - 5.00pm on Saturdays, Sundays and Government holidays.
     <br>
     </p>
+    </div>
+    {% endfor %}
 </div>
 <div class="container">
     <div class="row">
