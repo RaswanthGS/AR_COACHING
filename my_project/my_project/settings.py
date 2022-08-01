@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
-    'ckeditor',
+    'ckeditor', 
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -130,3 +130,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'main'
+
+STATIC_ROOT = "D:/Raswanth/VSCODE/GITHUB/AR_COACHING/my_project/blog/static/"
