@@ -14,7 +14,7 @@ class Content(models.Model):
 
 class Post(models.Model):
 	title = models.CharField(max_length=255)
-	content = models.TextField()
+	content = RichTextField()
 	date_posted = models.DateTimeField(auto_now_add=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	tag =  models.CharField(max_length=255, null=False)
@@ -24,7 +24,7 @@ class Post(models.Model):
 		return self.title
 
 class Announcement(models.Model):
-	announcement = models.TextField(max_length=500)
+	announcement = RichTextField(max_length=500)
 	time = models.DateTimeField(default=timezone.now)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 

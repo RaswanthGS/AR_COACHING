@@ -11,7 +11,7 @@ def main(request):
 
 def contentPage(request):
     context={
-        'contents':Content.objects.filter(nickname='PG TRB'),
+        'contents':Content.objects.filter(nickname='ENGG TRB'),
         'posts' : Post.objects.filter(tag='PG TRB').order_by('date_posted'),
         'announcements' : Announcement.objects.all()
     }
