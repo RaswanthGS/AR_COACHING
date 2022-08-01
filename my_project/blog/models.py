@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 class Content(models.Model):
 	title = models.CharField(max_length=100)
 	sub_title = models.CharField(max_length=200)
-	subject = models.TextField()
+	subject = RichTextField(blank=True, null=True)
 	nickname = models.CharField(max_length=20)
 
 	def __str__(self) -> str:

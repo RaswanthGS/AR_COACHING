@@ -2,31 +2,17 @@
 {% block content%}
 <div class="container my-5" style="background-color: white; border: 1px solid rgb(225, 225, 225);">
     {% for Content in contents %}
-    <div class="m-md-4 m-sm-3">
-    <h2 style="color: orange; text-align: center">{{ Content.title }}</h2>
-    <p style="text-align: center; color: blue">{{ Content.sub_title }}</p>
-    <hr>
-    <label style="text-align: justify; color: darkblue">{{ Content.subject }}</label>
-    <br>
-    <p style="color: darkblue"><i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Excellent Materials provided. <br>
-    <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Every unit consist of two half unit tests with 50 questions each, one problems test of 50 questions and one full unit test of 150.<br>
-    <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Regular test paper with answering and discussion sessions shall be held. <br>
-    <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Finally four half portion test and five full portion test will be conducted. <br>
-    <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Mathematical physics shall be handled by well versed mathematicians.<br>
-    <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Electronics units shall be handled by enthusiastic professors of great knowledge over electronics department.<br>
-    <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Class timings: 9.30am - 5.00pm on Saturdays, Sundays and Government holidays.
-    <br>
-    </p>
+    <div class="m-md-4 m-sm-3" style="padding-left:4%; padding-right:4%;">
+        <h2 style="color: orange; text-align: center">{{ Content.title }}</h2>
+        <p style="text-align: center; color: blue">{{ Content.sub_title }}</p>
+        <hr>
+        <div>
+          {{ Content.subject|safe }}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-md-8 col-sm-12 card1">
         {% for Post in posts %}
