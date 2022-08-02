@@ -12,12 +12,6 @@ li{
 a{
     text-decoration: none;
 }
-.nav-link right {
-    margin-right: 50px;
-}
-.carousel-item.active {
-    display:block;
-}
 .right{
     margin-left: 5px;
     font-size: small;

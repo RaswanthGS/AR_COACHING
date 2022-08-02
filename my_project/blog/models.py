@@ -4,6 +4,7 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 
 class Content(models.Model):
+	
 	title = models.CharField(max_length=100)
 	sub_title = models.CharField(max_length=200)
 	subject = RichTextField(blank=True, null=True)

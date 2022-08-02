@@ -4,6 +4,7 @@ from .forms import PostForm, AnnouncementForm
 
 def main(request):
     context={
+        'contents1':Content.objects.all().order_by('id'),
         'posts' : Post.objects.all().order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
@@ -11,7 +12,8 @@ def main(request):
 
 def contentPage(request):
     context={
-        'contents':Content.objects.filter(nickname='ENGG TRB'),
+        'contents1':Content.objects.all().order_by('id'),
+        'contents':Content.objects.filter(nickname='PG TRB'),
         'posts' : Post.objects.filter(tag='PG TRB').order_by('date_posted'),
         'announcements' : Announcement.objects.all()
     }
