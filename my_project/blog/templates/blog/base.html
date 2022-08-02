@@ -23,11 +23,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMenu" style="margin-left: 5%;">
               <ul class="navbar-nav mr-auto" style="margin-left: 5%;">
-                {% for Content in contents1 %}
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'pgtrb' %}">{{ Content.nickname }}<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{% url 'pgtrb' %}">PG TRB<span class="sr-only">(current)</span></a>
                 </li>
-                {% endfor %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'polytrb' %}">POLY TRB</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'enggtrb' %}">ENGG TRB</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'tnset' %}">TNSET</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'ugtrb' %}">UG TRB</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'sample' %}">SAMPLE MATERIALS</a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'slogin' %}">TEST</a>
                 </li>
@@ -98,14 +111,14 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <p><a class="scroll-link" href="#top-content" style="color: white;">HOME</a></p>
-                      <p><a href="#" style="color: white;">ENGGTRB</a></p>
-                      <p><a href="#" style="color: white;">PGTRB</a></p>
-                      <p><a href="#" style="color: white;">POLYTRB</a></p>
+                      <p><a class="scroll-link" href="{% url 'main' %}" style="color: white;">HOME</a></p>
+                      <p><a href="{% url 'enggtrb' %}" style="color: white;">ENGGTRB</a></p>
+                      <p><a href="{% url 'pgtrb' %}" style="color: white;">PGTRB</a></p>
+                      <p><a href="{% url 'polytrb' %}" style="color: white;">POLYTRB</a></p>
                     </div>
                     <div class="col-md-6">
-                      <p><a href="#" style="color: white;">TNSET</a></p>
-                      <p><a href="#" style="color: white;">GATE</a></p>
+                      <p><a href="{% url 'tnset' %}" style="color: white;">TNSET</a></p>
+                      <p><a href="{% url 'ugtrb' %}" style="color: white;">GATE</a></p>
                     </div>
                   </div>
                 </div>

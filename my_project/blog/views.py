@@ -4,48 +4,50 @@ from .forms import PostForm, AnnouncementForm
 
 def main(request):
     context={
-        'contents1':Content.objects.all().order_by('id'),
         'posts' : Post.objects.all().order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
     return render(request, "blog/mainpage.html", context)
 
-def contentPage(request):
+def pgtrb(request):
     context={
-        'contents1':Content.objects.all().order_by('id'),
         'contents':Content.objects.filter(nickname='PG TRB'),
-        'posts' : Post.objects.filter(tag='PG TRB').order_by('date_posted'),
+        'posts' : Post.objects.filter(tag='PG TRB').order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
     return render(request, "blog/content.html", context)
     
 def polytrb(request):
     context={
-        'posts' : Post.objects.filter(tag='POLY TRB').order_by('date_posted'),
+        'contents':Content.objects.filter(nickname='POLY TRB'),
+        'posts' : Post.objects.filter(tag='POLY TRB').order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
-    return render(request, "blog/polytrb.html", context)
+    return render(request, "blog/content.html", context)
 
 def enggtrb(request):
     context={
-        'posts' : Post.objects.filter(tag='ENGG TRB').order_by('date_posted'),
+        'contents':Content.objects.filter(nickname='ENGG TRB'),
+        'posts' : Post.objects.filter(tag='ENGG TRB').order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
-    return render(request, "blog/enggtrb.html", context)
+    return render(request, "blog/content.html", context)
 
 def tnset(request):
     context={
-        'posts' : Post.objects.filter(tag='TNSET').order_by('date_posted'),
+        'contents':Content.objects.filter(nickname='TNSET'),
+        'posts' : Post.objects.filter(tag='TNSET').order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
-    return render(request, "blog/tnset.html", context)
+    return render(request, "blog/content.html", context)
 
 def ugtrb(request):
     context={
-        'posts' : Post.objects.filter(tag='UG TRB').order_by('date_posted'),
+        'contents':Content.objects.filter(nickname='UG TRB'),
+        'posts' : Post.objects.filter(tag='UG TRB').order_by('-date_posted'),
         'announcements' : Announcement.objects.all()
     }
-    return render(request, "blog/ugtrb.html", context)
+    return render(request, "blog/content.html", context)
 
 def sample(request):
     return render(request, "blog/sample.html")
