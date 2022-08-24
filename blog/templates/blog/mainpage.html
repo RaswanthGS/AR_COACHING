@@ -39,6 +39,7 @@
             <div class="card-header" style="background-color: rgb(65, 151, 150); color: white;">
                 <b style="font-size: 22px">{{Post.date_posted|date:"d"}}</b>
                 <c>{{Post.date_posted|date:"F, Y"}}</c>
+                {{post.count}}
                 <a href="http://{{Post.link}}" class="fa fa-download float-right mt-2 mr-1" style="color: white;"></a>
                 {% if user.is_authenticated %}
                         <a class="float-right mt-1 mr-3" style="color: white;" href="#">Edit</a>
