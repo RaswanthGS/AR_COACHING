@@ -22,10 +22,6 @@ class Post(models.Model):
 	link = models.CharField(max_length=255, blank=True)
 
 	def count(self):
-
-
-
-		
 		return self.title
 
 	def __str__(self):
